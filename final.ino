@@ -1,6 +1,6 @@
-int fsrReading;
-int fsrReading2;
-int fsrReading3;
+String fsrReading;
+String fsrReading2;
+String fsrReading3;
 int counter = 0;
 
 void setup() {
@@ -11,22 +11,15 @@ void setup() {
 }
 
 void loop() {
-digitalWrite(13, LOW);
+  digitalWrite(13, LOW);
   
-  fsrReading = analogRead(0);
-  fsrReading2 = analogRead(1);
-  fsrReading3 = analogRead(2);
-  Serial.print("Sekunde: ");
-  Serial.println(counter);
-  Serial.print("Wert: ");
-  Serial.println(fsrReading);
-  Serial.print("Wert2: ");
-  Serial.println(fsrReading2);
-  Serial.print("Wert3: ");
-  Serial.println(fsrReading3);
+  fsrReading = String(analogRead(0));
+  fsrReading2 = String(analogRead(1));
+  fsrReading3 = String(analogRead(2));
+  Serial.println(fsrReading + "|" + fsrReading2 +  "|" + fsrReading3);
 
   counter++;
   
-  delay(500);
+  delay(100);
 
 }
